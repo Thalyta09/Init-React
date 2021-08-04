@@ -10,7 +10,17 @@ const App = () => {
     setUsers(valorAntigo => {
       return [
         ...valorAntigo,
-        user]
+        {
+          id: valorAntigo.length + 1,
+          nome: user.nome,
+          sexo: user.sexo,
+          email: user.email,
+          dataNascimento: user.dataNascimento,
+          naturalidade: user.naturalidade,
+          nacionalidade: user.nacionalidade,
+          cpf: user.cpf
+        }
+      ]
     })
   }
 

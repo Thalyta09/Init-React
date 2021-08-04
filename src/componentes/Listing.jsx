@@ -15,6 +15,7 @@ const Listing = ({ users }) => {
                         <table className="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th>Nome</th>
                                     <th>CPF</th>
                                     <th>Data de Nascimento</th>
@@ -29,6 +30,7 @@ const Listing = ({ users }) => {
                                 {users.map((user, index) => {
                                     return (
                                         <tr key = {index} >
+                                            <td >{user.id}</td>
                                             <td >{user.nome}</td>
                                             <td >{user.cpf}</td>
                                             <td >{user.dataNascimento}</td>

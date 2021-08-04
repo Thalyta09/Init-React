@@ -2,6 +2,7 @@ import { React, useState } from 'react'
 
 const Form = (props) => {
     const [user, setUser] = useState({
+        id: "",
         nome: "",
         sexo: "",
         email: "",
@@ -53,7 +54,7 @@ const Form = (props) => {
                                 onChange={handleChange} />
                         </div>
                         <div className="form-row">
-                            <div class="form-group col-md-4">
+                            <div className="form-group col-md-4">
                                 <label htmlFor="exampleFormControlInput1" className="form-label">CPF</label>
                                 <br />
                                 <input
@@ -81,7 +82,6 @@ const Form = (props) => {
                                     className="form-control"
                                     onChange={handleChange}
                                 >
-                                    <option selected value="Gênero"></option>
                                     <option>Feminino</option>
                                     <option>Masculino</option>
                                     <option>Não Declarar</option>
@@ -89,26 +89,26 @@ const Form = (props) => {
                             </div>
                         </div>
                         <div className="form-row">
-                        <div className="form-group col-md-6">
-                            <label htmlFor="exampleFormControlInput1" className="form-label">Naturalidade</label>
-                            <br />
-                            <input
-                                type="text"
-                                name="naturalidade"
-                                className="form-control"
-                                placeholder="Naturalidade"
-                                onChange={handleChange} />
-                        </div>
-                        <div className="form-group col-md-6">
-                            <label htmlFor="exampleFormControlInput1" className="form-label">Nacionalidade</label>
-                            <br />
-                            <input
-                                type="text"
-                                name="nacionalidade"
-                                className="form-control"
-                                placeholder="Nacionalidade"
-                                onChange={handleChange} />
-                        </div>
+                            <div className="form-group col-md-6">
+                                <label htmlFor="exampleFormControlInput1" className="form-label">Naturalidade</label>
+                                <br />
+                                <input
+                                    type="text"
+                                    name="naturalidade"
+                                    className="form-control"
+                                    placeholder="Naturalidade"
+                                    onChange={handleChange} />
+                            </div>
+                            <div className="form-group col-md-6">
+                                <label htmlFor="exampleFormControlInput1" className="form-label">Nacionalidade</label>
+                                <br />
+                                <input
+                                    type="text"
+                                    name="nacionalidade"
+                                    className="form-control"
+                                    placeholder="Nacionalidade"
+                                    onChange={handleChange} />
+                            </div>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputEmail1" className="form-label">E-mail</label>
