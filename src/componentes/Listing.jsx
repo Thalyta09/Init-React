@@ -1,6 +1,10 @@
 import { React } from 'react'
 
-const Listing = ({ users }) => {
+const Listing = (props) => {
+
+    const deleteUser = (id) => {
+        props.removeUser(id)
+    }
 
     return (
         <>
@@ -27,9 +31,9 @@ const Listing = ({ users }) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {users.map((user, index) => {
+                                {props.users.map((user, index) => {
                                     return (
-                                        <tr key = {index} >
+                                        <tr key={index} >
                                             <td >{user.id}</td>
                                             <td >{user.nome}</td>
                                             <td >{user.cpf}</td>
@@ -39,9 +43,16 @@ const Listing = ({ users }) => {
                                             <td >{user.nacionalidade}</td>
                                             <td >{user.email}</td>                                            
                                             <td>
-                                                <a href="#" className="view" title="View" data-toggle="tooltip"><i className="material-icons">&#xE417;</i></a>
-                                                <a href="#" className="edit" title="Edit" data-toggle="tooltip"><i className="material-icons">&#xE254;</i></a>
-                                                <a href="#" className="delete" title="Delete" data-toggle="tooltip"><i className="material-icons">&#xE872;</i></a>
+                                                {/* <a href="#" className="view" title="View" data-toggle="tooltip"><i className="material-icons">&#xE417;</i></a>
+                                                <a href="#" className="edit" title="Edit" data-toggle="tooltip"><i className="material-icons">&#xE254;</i></a> */}
+                                                <a 
+                                                    href="#" 
+                                                    className="delete" 
+                                                    title="Delete" data-toggle="tooltip"
+                                                    onClick={() => deleteUser(user.id)}
+                                                    >
+                                                        <i className="material-icons">&#xE872;</i>
+                                                </a>
                                             </td>
                                         </tr>
                                     )

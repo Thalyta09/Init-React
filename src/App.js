@@ -7,7 +7,7 @@ const App = () => {
   const [users, setUsers] = useState([])
 
   const addUser = (user) => {
-    setUsers(valorAntigo => {
+    setUsers((valorAntigo) => {
       return [
         ...valorAntigo,
         {
@@ -24,10 +24,15 @@ const App = () => {
     })
   }
 
+  const removeUser = (id) => {
+    const list = users.filter(item => item.id !== id)
+    setUsers(list)
+  }
+
   return (
     <>
       <Form addUser={addUser} />
-      <Listing users={users} />
+      <Listing users={users} removeUser={removeUser} />
     </>
   );
 }
