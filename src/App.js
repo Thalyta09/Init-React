@@ -6,12 +6,12 @@ const App = () => {
 
   const [users, setUsers] = useState([])
 
-  const addUser = (user) => {
+  const addUser = (user, count) => {
     setUsers((valorAntigo) => {
       return [
         ...valorAntigo,
         {
-          id: valorAntigo.length + 1,
+          id: count,
           nome: user.nome,
           sexo: user.sexo,
           email: user.email,

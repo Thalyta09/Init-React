@@ -1,6 +1,9 @@
 import { React, useState } from 'react'
 
 const Form = (props) => {
+
+    const [count, setCount] = useState(1)
+
     const [user, setUser] = useState({
         id: 0,
         nome: "",
@@ -29,7 +32,8 @@ const Form = (props) => {
     }
 
     const envInf = () => {
-        props.addUser(user)
+        setCount(count + 1)
+        props.addUser(user, count)
         limpaCampos()
     }
 
@@ -43,30 +47,15 @@ const Form = (props) => {
                         </div>
                     </div>
                     <form id="form">
-                        <div className="form-row">
-                            {/* <div className="form-group col-md-2">
-                                <label htmlFor="exampleFormControlInput1" className="form-label">#</label>
-                                <br />
-                                <input
-                                    type="number"
-                                    name="id"
-                                    min="1"
-                                    max="100"
-                                    // value="1"
-                                    className="form-control"
-                                    onChange={handleChange} 
-                                    />
-                            </div> */}
-                            <div className="form-group col-md-12">
-                                <label htmlFor="exampleFormControlInput1" className="form-label">Nome Completo</label>
-                                <br />
-                                <input
-                                    type="text"
-                                    name="nome"
-                                    className="form-control"
-                                    placeholder="Nome Completo"
-                                    onChange={handleChange} />
-                            </div>
+                        <div className="mb-3">
+                            <label htmlFor="exampleFormControlInput1" className="form-label">Nome Completo</label>
+                            <br />
+                            <input
+                                type="text"
+                                name="nome"
+                                className="form-control"
+                                placeholder="Nome Completo"
+                                onChange={handleChange} />
                         </div>
                         <div className="form-row">
                             <div className="form-group col-md-4">
@@ -97,6 +86,7 @@ const Form = (props) => {
                                     className="form-control"
                                     onChange={handleChange}
                                 >
+                                    <option>Escolha uma opção:</option>
                                     <option>Feminino</option>
                                     <option>Masculino</option>
                                     <option>Não Declarar</option>
