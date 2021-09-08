@@ -12,12 +12,12 @@ const App = () => {
         ...valorAntigo,
         {
           id: count,
-          nome: user.nome,
-          sexo: user.sexo,
+          name: user.name,
+          gender: user.gender,
           email: user.email,
-          dataNascimento: user.dataNascimento,
-          naturalidade: user.naturalidade,
-          nacionalidade: user.nacionalidade,
+          birth_date: user.birth_date,
+          city: user.city,
+          state: user.state,
           cpf: user.cpf
         }
       ]
